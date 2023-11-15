@@ -1,0 +1,19 @@
+name: Caller Workflow
+on: pull_request
+
+jobs:
+  TriggerCrea-Workflow-Dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Workflow Dispatch
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.REMOTE_WORKFLOW_PAT }}
+          script: |
+            const result = await github.rest.actions.createWorkflowDispatch({
+              owner: 'kvngls',
+              repo: 'called-workflow',
+              workflow_id: 'called-workflow.yml',
+              ref: 'main'
+            })
+            console.log(result)
