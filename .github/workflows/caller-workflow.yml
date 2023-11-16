@@ -2,18 +2,30 @@ name: Caller Workflow
 on: pull_request
 
 jobs:
-  TriggerCrea-Workflow-Dispatch:
+  Trigger-Workflow-1-And-Wait:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Workflow Dispatch
-        uses: actions/github-script@v6
+      - name: Trigger Workflow 1 and Wait
+        uses: convictional/trigger-workflow-and-wait@v1.6.5
         with:
-          github-token: ${{ secrets.REMOTE_WORKFLOW_PAT }}
-          script: |
-            const result = await github.rest.actions.createWorkflowDispatch({
-              owner: 'kvngls',
-              repo: 'called-workflow',
-              workflow_id: 'called-workflow.yml',
-              ref: 'main'
-            })
-            console.log(result)
+          workflow_file_name: called-workflow-1.yml
+          owner: kvngls
+          repo: called-workflow
+          ref: main
+          # propagate_failure: false
+          github_token: ${{ secrets.CALLED_WORKFLOW_1_PAT }}
+
+  Trigger-Workflow-2-And-Wait:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Workflow 2 and Wait
+        uses: convictional/trigger-workflow-and-wait@v1.6.5
+        with:
+          workflow_file_name: called-workflow-2.yml
+          owner: kvngls
+          repo: called-workflow-2
+          ref: main
+          # propagate_failure: false
+          github_token: ${{ secrets.CALLED_WORKFLOW_2_PAT }}
+      
+        
