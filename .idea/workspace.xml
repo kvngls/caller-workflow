@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96920e2c-d8bf-481e-afb6-e59d82999063" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/CODEOWNERS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +32,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/kevinan/caller-workflow",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -43,7 +44,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701188162786</updated>
-      <workItem from="1701188164113" duration="27000" />
+      <workItem from="1701188164113" duration="109000" />
     </task>
     <servers />
   </component>
